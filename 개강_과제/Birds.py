@@ -1,10 +1,11 @@
 class Birds:
-    def __init__(self, bird, sound, weight, speed):
+    def __init__(self, bird, sound, weight, speed, item=False):
         self.bird = bird
         self.sound = sound
         self.weight = weight
         self.speed = speed
-
+        self.item = item
+# 아이템을 가지고있는 앵무샌는 참새 비둘기 단 러버덕 닭은 X2가 안됨
     def crying(self):
         print(f'{self.bird}(이)가 "{self.sound}" 울음소리를 냈습니다.')
 
@@ -14,11 +15,15 @@ class Birds:
 
     def run(self):
         result = self.weight * self.speed
-        print(f'{self.bird}가 {result}속력으로 달립니다.')
+        if self.item :
+            print(result)
+            print(f'{self.bird}가 {result*2}속력으로 달립니다.')
+        else:
+            print(f'{self.bird}가 {result}속력으로 달립니다.')
 
-앵무새 = Birds('앵무새', '짹', 2, 3)
-참새 = Birds('참새', '짹', 3, 2)
-비둘기 = Birds('비둘기', '구구', 4, 3)
+앵무새 = Birds('앵무새', '짹', 2, 3, True)
+참새 = Birds('참새', '짹', 3, 2, True)
+비둘기 = Birds('비둘기', '구구', 4, 3, True)
 닭 = Birds('닭', '꼬끼오', 4, 1)
 러버덕 = Birds('러버덕', '꽉꽉', 100, 0)
 
