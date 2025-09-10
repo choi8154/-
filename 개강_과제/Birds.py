@@ -52,11 +52,17 @@ def birds():
 
         bird = bird_dict[A]
         if B == '날기':
-            bird.fly()
+            if A == "러버덕":
+                print('러버덕은 날 수 없습니다.')
+            else :
+                bird.fly()
         elif B == '소리내기':
             bird.crying()
         elif B == '달리기':
-            bird.run()
+            if A == "러버덕":
+                print('러버덕은 달릴 수 없습니다.')
+            else :
+                bird.run()
         else:
             print('알 수 없는 입력입니다.')
             continue
