@@ -5,7 +5,7 @@ class Birds:
         self.weight = weight
         self.speed = speed
         self.item = item
-# 아이템을 가지고있는 앵무샌는 참새 비둘기 단 러버덕 닭은 X2가 안됨
+# 아이템을 가지고있는 앵무새는 참새 비둘기 단 러버덕 닭은 X2가 안됨
     def crying(self):
         print(f'{self.bird}(이)가 "{self.sound}" 울음소리를 냈습니다.')
 
@@ -21,11 +21,15 @@ class Birds:
         else:
             print(f'{self.bird}가 {result}속력으로 달립니다.')
 
+
+
 앵무새 = Birds('앵무새', '짹', 2, 3, True)
 참새 = Birds('참새', '짹', 3, 2, True)
 비둘기 = Birds('비둘기', '구구', 4, 3, True)
 닭 = Birds('닭', '꼬끼오', 4, 1)
 러버덕 = Birds('러버덕', '꽉꽉', 100, 0)
+
+
 
 bird_dict = {
     "앵무새": 앵무새,
@@ -48,8 +52,6 @@ def birds():
         except ValueError as e:
             print('","로 새와 행동을 구분하시오')
             continue
-
-
 
         if A not in bird_dict:
             print('목록에 없는 새 입니다.')
